@@ -1,11 +1,13 @@
 import { Router } from 'express';
 
+import { ListTaskController } from './controller/task/ListTaskController';
+
 
 const router = Router();
 
 
 // Task Routes
-router.get('/task',(req,res) => res.json({something:'Some response'}))
+router.get('/task',new ListTaskController().handle);
 
 
 export { router };
